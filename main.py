@@ -1,15 +1,26 @@
+import random
 import random as ran
 import PySimpleGUI as sg
 sg.theme('DarkAmber')
-bruh = ran. 
-bruh2 = [1,2,3,4,5,6,7,8,9,0]
+
+word_ls = ['develop','work','make','tomorrow','control','visual','computer','interest','bruh']
+
+
+
+for i in range(6):
+    sent = random.choice(word_ls)
+    print(sent)
+
 layout = [
-    [sg.Text() ,sg.Button("press here to start"),sg.InputText()]
+    [sg.Button("press here to start",key="field"),sg.InputText(key='text')]
 ]
 
 window = sg.Window("title",layout)
+
 while True:
     event,values = window.read()
     if event == sg.WIN_CLOSED:
         break
-    if event == 
+    if event == "field":
+        t = values['text']
+        print(t)
